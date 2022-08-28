@@ -22,7 +22,6 @@ public class User implements Serializable{
 	private String phone;
 	private String password;
 
-	// private List<Order> orders = new ArrayList<>();
 
 	public User() {
 	}
