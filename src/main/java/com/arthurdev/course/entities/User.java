@@ -27,7 +27,7 @@ public class User implements Serializable{
 	private String phone;
 	private String password;
 	
-	//para nao ficar chamando em um loop infinito entre cliente e pedido
+	//para nao ficar chamando em um loop infinito entre cliente e pedido. Usar qnd houver relacao um p muitos ou muitos p muitos
 	@JsonIgnore
 	@OneToMany(mappedBy = "client")
 	private List<Order> orders = new ArrayList<>();
