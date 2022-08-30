@@ -11,7 +11,7 @@ import com.arthurdev.course.entities.pk.OrderItemPK;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-@Table(name ="tb_order_item")
+@Table(name = "tb_order_item")
 public class OrderItem implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -20,9 +20,8 @@ public class OrderItem implements Serializable {
 	
 	private Integer quantity;
 	private Double price;
-
+	
 	public OrderItem() {
-
 	}
 
 	public OrderItem(Order order, Product product, Integer quantity, Double price) {
@@ -37,19 +36,19 @@ public class OrderItem implements Serializable {
 	public Order getOrder() {
 		return id.getOrder();
 	}
-
+	
 	public void setOrder(Order order) {
 		id.setOrder(order);
 	}
-
+	
 	public Product getProduct() {
 		return id.getProduct();
 	}
-
+	
 	public void setProduct(Product product) {
 		id.setProduct(product);
 	}
-
+	
 	public Integer getQuantity() {
 		return quantity;
 	}
@@ -68,7 +67,7 @@ public class OrderItem implements Serializable {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(id);
+		return Objects.hash(price, quantity);
 	}
 
 	@Override
@@ -80,7 +79,8 @@ public class OrderItem implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		OrderItem other = (OrderItem) obj;
-		return Objects.equals(id, other.id);
+		return Objects.equals(price, other.price) && Objects.equals(quantity, other.quantity);
 	}
 
+	
 }
